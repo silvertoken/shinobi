@@ -78,7 +78,7 @@ COPY docker-entrypoint.sh pm2Shinobi.yml ./
 RUN chmod -f +x ./*.sh
 
 # Copy default configuration files
-COPY ./config/conf.sample.json ./config/super.sample.json /opt/shinobi/
+COPY ./config/conf.sample.json ./config/super.sample.json ./config/motion.conf.sample.json /opt/shinobi/
 
 VOLUME ["/opt/shinobi/videos"]
 VOLUME ["/config"]
