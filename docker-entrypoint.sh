@@ -20,11 +20,6 @@ if [ ! -f /opt/shinobi/super.json ]; then
     cp /opt/shinobi/super.sample.json /opt/shinobi/super.json
 fi
 
-if [ ! -f /opt/shinobi/plugins/motion/conf.json ]; then
-    echo "Create default config file /opt/shinobi/plugins/motion/conf.json ..."
-    cp /opt/shinobi/motion.conf.sample.json /opt/shinobi/plugins/motion/conf.json
-fi
-
 # Wait for the database to be available
 if [ -n "${DATABASE_HOST}" ]; then
     echo "Wait for MySQL server" ...
