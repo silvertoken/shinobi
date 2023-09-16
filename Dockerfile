@@ -1,5 +1,7 @@
 FROM node:16-alpine3.18
 
+ARG SHINOBI_VERSION=master
+
 LABEL Author="Silvertoken"
 
 # Set environment variables to default values
@@ -69,6 +71,7 @@ WORKDIR /opt/shinobi
 
 # Clone the Shinobi CCTV PRO repo and install Shinobi app including NodeJS dependencies
 RUN git clone https://gitlab.com/Shinobi-Systems/Shinobi.git /opt/shinobi && \
+    git reset --hard ${SHINOBI_VERSION} && \
     npm install npm@"<10.0.0" -g && \
     npm install pm2 -g && \
     npm install
@@ -79,6 +82,9 @@ RUN chmod -f +x ./*.sh
 
 # Copy default configuration files
 COPY ./config/conf.sample.json ./config/super.sample.json /opt/shinobi/
+
+# Set env for shinobi commit id
+ENV SHINOBI_VERSION=${SHINOBI_VERSION}
 
 VOLUME ["/opt/shinobi/videos"]
 VOLUME ["/config"]
