@@ -69,7 +69,7 @@ WORKDIR /opt/shinobi
 
 # Clone the Shinobi CCTV PRO repo and install Shinobi app including NodeJS dependencies
 RUN git clone https://gitlab.com/Shinobi-Systems/Shinobi.git /opt/shinobi && \
-    npm i npm@latest -g && \
+    npm install npm@"<10.0.0" -g && \
     npm install pm2 -g && \
     npm install
 
