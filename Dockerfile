@@ -1,4 +1,4 @@
-FROM node:16-alpine3.18
+FROM node:20-alpine3.21
 
 ARG SHINOBI_VERSION=master
 
@@ -72,7 +72,7 @@ WORKDIR /opt/shinobi
 # Clone the Shinobi CCTV PRO repo and install Shinobi app including NodeJS dependencies
 RUN git clone https://gitlab.com/Shinobi-Systems/Shinobi.git /opt/shinobi && \
     git reset --hard ${SHINOBI_VERSION} && \
-    npm install npm@"<10.0.0" -g && \
+    npm install npm@"<11.0.0" -g && \
     npm install pm2 -g && \
     npm install
 
