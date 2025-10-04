@@ -12,3 +12,4 @@ Shinobi doesn't seem to really maintain version releases and most instructions b
 | -------- | ------------------------- |
 | 20230713 | Updated to alpine 3.18 |
 | 20240104 | Updated to node 20, alpine 3.21, accepted SHA tag suffix |
+| 20251004 | Updated to alpine 3.22 |
